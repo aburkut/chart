@@ -1,0 +1,34 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="utf8")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+
+        title= title
+
+        link(href="/css/compiled.css" rel="stylesheet")
+
+     body
+
+         nav(class="navbar navbar-inverse navbar-fixed-top")
+            div(class="container")
+                div(class="navbar-header")
+                    button(type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar")
+                        span(class="sr-only") Toggle navigation
+                        span(class="icon-bar")
+                        span(class="icon-bar")
+                        span(class="icon-bar")
+                    a(class="navbar-brand" href="/") !{title}
+
+
+        div(class="container")
+            div(class="chart-label")
+                strong Current | Forecast
+            div(class="main" role="chart")
+            div(class="buttons-wrap" role="buttons")
+
+
+         script(type="text/javascript")
+             | window.data = !{data};
+         script(data-main="/javascripts/config.js" src="/javascripts/lib/requirejs/require.js")
